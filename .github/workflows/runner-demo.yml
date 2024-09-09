@@ -26,7 +26,7 @@ jobs:
     - name: Checking out code
       uses: actions/checkout@v3
       with:
-        repository: procter-gamble/smaRepo
+        repository: mangesh-khaire/git-demo
         ref: main
         token: ${{ secrets.GIT_DEMO_ACCESS }}
         path: _work
