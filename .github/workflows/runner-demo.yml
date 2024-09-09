@@ -1,17 +1,20 @@
-# .github/workflows/self-hosted-runner.yml
 name: Run on Self-Hosted Runner
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
   build:
     runs-on: self-hosted  # Specifies that this job should run on a self-hosted runner
     
     steps:
-      - name: Print current directory
-        run: dir  # Prints the current working directory
+      - name: Print the current directory
+        run: |
+          echo Current Directory:
+          pwd  # Prints the current working directory
 
-      - name: List contents of the current directory
-        run: dir  # Lists the contents of the current directory (optional for verification)
-        
+      - name: List the contents of the current directory
+        run: |
+          echo Listing Directory Contents:
+          dir  # Lists the contents of the current directory
+
