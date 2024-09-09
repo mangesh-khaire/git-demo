@@ -10,8 +10,8 @@ jobs:
     
     steps:
       - name: Print current directory
-        run: pwd  # Prints the current working directory
+        run: dir  # Prints the current working directory
 
       - name: List contents of the current directory
-        run: ls -la  # Lists the contents of the current directory (optional for verification)
+        run: dir  # Lists the contents of the current directory (optional for verification)
         
