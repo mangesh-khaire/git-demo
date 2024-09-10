@@ -11,7 +11,9 @@ plugins {
 
 ext {
 
-	webJarPath  =   "${projectDir}/lib"	
+	webJarPath  =   "${projectDir}/lib"
+	extJarPath = System.getenv('EXTERNAL_LIB_PATH')
+	
 }
 allprojects {
     
@@ -26,7 +28,7 @@ allprojects {
 	
 	repositories {
         flatDir {
-            dirs webJarPath
+            dirs extJarPath
         }
 	}
 		
