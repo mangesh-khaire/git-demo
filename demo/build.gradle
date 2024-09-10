@@ -11,9 +11,14 @@ plugins {
 
 ext {
 
-	extJarPath = System.getenv('EXTERNAL_LIB_PATH')
+    extJarPath = System.getenv('EXTERNAL_LIB_PATH')
 	
 }
+
+if (!extJarPath) {
+    throw new GradleException("The environment variable 'EXTERNAL_LIB_PATH' is not set or is empty.")
+}
+
 allprojects {
     
 	sourceSets {
@@ -31,9 +36,10 @@ allprojects {
         }
 	}
 		
-	dependencies {
-        implementation name: "eMatrixServletRMI"
-		//implementation files("$rootDir/lib/eMatrixServletRMI.jar")
+dependencies {
+	implementation fileTree(dir: extJarPath, include: ["*.jar"])
+        //implementation name: "eMatrixServletRMI"
+	//implementation files("$rootDir/lib/eMatrixServletRMI.jar")
         
     }
 	
