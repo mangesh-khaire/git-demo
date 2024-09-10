@@ -8,7 +8,7 @@ jobs:
     runs-on: self-hosted  # Specifies that this job should run on a self-hosted runner (Windows or Linux, depending on your setup)
     
     env:
-      EXTERNAL_LIB_PATH: D:/work_dsi/PNG/Platform Team/enovia-jar/enovia-24x-jar
+      EXTERNAL_LIB_PATH: "D:/work_dsi/PNG/Platform Team/enovia-jar/enovia-24x-jar"
 
     steps:
       # Step 1: Checkout the repository
@@ -17,9 +17,9 @@ jobs:
  
       - name: Set library path
         run: echo "EXTERNAL_LIB_PATH=D:/work_dsi/PNG/Platform Team/enovia-jar/enovia-24x-jar"
-        
-      - name: Print environment variables
-        run: env
+ 
+      - name: Print environment variable
+        run: echo "EXTERNAL_LIB_PATH=$EXTERNAL_LIB_PATH"
         
       # Step 2: Set up JDK (if required, specify the Java version needed for your Gradle project)
       - name: Set up JDK 17
