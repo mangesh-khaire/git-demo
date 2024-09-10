@@ -14,6 +14,10 @@ jobs:
  
       - name: Set library path
         run: echo "EXTERNAL_LIB_PATH=D:/work_dsi/PNG/Platform Team/enovia-jar/enovia-24x-jar" >> $GITHUB_ENV
+        
+      - name: Verify path
+        run: dir "D:/work_dsi/PNG/Platform Team/enovia-jar/enovia-24x-jar"
+        shell: cmd
 
       # Step 2: Set up JDK (if required, specify the Java version needed for your Gradle project)
       - name: Set up JDK 17
@@ -26,7 +30,7 @@ jobs:
       - name: Build Gradle project
         working-directory: demo
         run: |
-            .\gradlew.bat build  # Use './gradlew build' if on Linux or MacOS
+            .\gradlew.bat build --info  # Use './gradlew build' if on Linux or MacOS
 
       # Step 4: Copy the build output to a specific directory
       - name: Copy build output to specific location
