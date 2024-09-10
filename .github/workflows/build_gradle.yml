@@ -23,4 +23,10 @@ jobs:
       - name: Build Gradle project
         run: |
           cd demo
-          gradlew build  # Use './gradlew build' if on Linux or MacOS
+          gradlew.bat build  # Use './gradlew build' if on Linux or MacOS
+
+      # Step 4: Copy the build output to a specific directory
+      - name: Copy build output to specific location
+        run: |
+          mkdir D:\build-output  # Create a directory for storing the build output
+          xcopy /s /e demo\build D:\build-output  # Copy the entire build directory to the new location
