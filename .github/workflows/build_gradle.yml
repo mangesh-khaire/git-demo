@@ -21,9 +21,9 @@ jobs:
 
       # Step 3: Navigate to the 'demo' folder and build the Gradle project
       - name: Build Gradle project
+        working-directory: demo
         run: |
-          cd demo
-          gradlew.bat build  # Use './gradlew build' if on Linux or MacOS
+            .\gradlew.bat build  # Use './gradlew build' if on Linux or MacOS
 
       # Step 4: Copy the build output to a specific directory
       - name: Copy build output to specific location
