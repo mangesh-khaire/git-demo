@@ -11,13 +11,13 @@ plugins {
 
 ext {
 
-    extJarPath = System.getenv('EXTERNAL_LIB_PATH')
+	webJarPath  =   "${projectDir}/lib"	
 	
 }
 
 task printExtJarPath {
     doLast {
-        println "extJarPath: $extJarPath"
+        println "webJarPath: $webJarPath"
     }
 }
 
@@ -34,13 +34,12 @@ allprojects {
 	
 	repositories {
         flatDir {
-            dirs extJarPath
+            dirs webJarPath
         }
 	}
 		
 dependencies {
-	implementation fileTree(dir: extJarPath, include: ["*.jar"])
-        //implementation name: "eMatrixServletRMI"
+        implementation name: "eMatrixServletRMI"
 	//implementation files("$rootDir/lib/eMatrixServletRMI.jar")
         
     }
