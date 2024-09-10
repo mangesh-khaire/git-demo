@@ -15,8 +15,10 @@ ext {
 	
 }
 
-if (!extJarPath) {
-    throw new GradleException("The environment variable 'EXTERNAL_LIB_PATH' is not set or is empty.")
+task printExtJarPath {
+    doLast {
+        println "extJarPath: $extJarPath"
+    }
 }
 
 allprojects {
