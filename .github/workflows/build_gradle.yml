@@ -26,6 +26,11 @@ jobs:
           distribution: 'temurin'  # Specify JDK distribution (temurin, zulu, adopt, etc.)
           java-version: '17'       # Change this to the Java version your project requires
 
+      - name: Print extJarPath
+        working-directory: demo
+        run: |
+          .\gradlew printExtJarPath
+
       # Step 3: Navigate to the 'demo' folder and build the Gradle project
       - name: Build Gradle project
         working-directory: demo
