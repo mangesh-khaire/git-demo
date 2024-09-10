@@ -19,10 +19,14 @@ jobs:
           distribution: 'temurin'
           java-version: '11'  # Set the Java version you need (e.g., 8, 11, 17, etc.)
 
-      # Compile the Java program
+    # Compile the Java program and store the .class files in a specific directory
       - name: Compile Java
-        run: javac test.java
+        run: javac -d D:\builds test.java  # Compiles the Java file and stores the output in D:\builds
       
-      # Run the compiled Java program
+      # List the files in the build directory to verify the output
+      - name: List build directory contents
+        run: dir D:\builds  # Lists the contents of D:\builds to verify the compiled files
+      
+      # Run the compiled Java program from the specific directory
       - name: Run Java
-        run: java test
+        run: java -cp D:\builds test  # Runs the Java program from the D:\builds directory
