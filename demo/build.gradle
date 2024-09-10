@@ -11,7 +11,7 @@ plugins {
 
 ext {
 
-	webJarPath  =   "${projectDir}/lib"	
+	webJarPath  =   "D:/work_dsi/PNG/Platform Team/enovia-jar/enovia-24x-jar"	
 	
 }
 
