@@ -43,3 +43,11 @@ jobs:
         run: |
           mkdir D:\build-output  # Create a directory for storing the build output
           xcopy /s /e demo\build D:\build-output  # Copy the entire build directory to the new location
+
+      
+      # Step 5: Upload build artifacts
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: demo/build/libs
