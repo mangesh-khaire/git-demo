@@ -12,7 +12,7 @@ plugins {
 ext {
 
 	webJarPath  =   "D:/work_dsi/PNG/Platform Team/enovia-jar/enovia-24x-jar"
-	extJarPath  =   System.getEnv("extJarPath")
+	extJarPath  =   System.getenv("extJarPath")
 	
 }
 
