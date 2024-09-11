@@ -43,4 +43,4 @@ jobs:
         run: |
           echo "workflow_desc  ${workflow_desc}"
           echo "GIT_DEMO_ACCESS  ${GIT_DEMO_ACCESS}"
-          echo "DEMO_USER_NAME  ${{env.DEMO_USER_NAME}}"
+          echo "DEMO_USER_NAME  ${{vars.DEMO_USER_NAME}}"
