@@ -22,6 +22,7 @@ on:
 
 
 jobs:
+
   print-tag:
     runs-on: ubuntu-latest
     if:  ${{ inputs.print_tags }} 
@@ -31,3 +32,14 @@ jobs:
 
       - name: Print the input logLevel to STDOUT
         run: echo  The tags are ${{ inputs.logLevel }} 
+
+  print-env:
+    env: 
+      workflow_desc: Running use cases
+      GIT_DEMO_ACCESS: ${{ secrets.GIT_DEMO_ACCESS }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: print env variable
+        run: |
+          echo "workflow_desc  ${env.workflow_desc}"
+          echo "GIT_DEMO_ACCESS  ${env.GIT_DEMO_ACCESS}"
