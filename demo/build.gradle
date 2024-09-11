@@ -11,13 +11,14 @@ plugins {
 
 ext {
 
-	webJarPath  =   "D:/work_dsi/PNG/Platform Team/enovia-jar/enovia-24x-jar"	
+	webJarPath  =   "D:/work_dsi/PNG/Platform Team/enovia-jar/enovia-24x-jar"
+	extJarPath  =   System.getEnv("extJarPath")
 	
 }
 
 task printExtJarPath {
     doLast {
-        println "webJarPath: $webJarPath"
+        println "extJarPath: $extJarPath"
     }
 }
 
@@ -34,7 +35,7 @@ allprojects {
 	
 	repositories {
         flatDir {
-            dirs webJarPath
+            dirs extJarPath
         }
 	}
 		
