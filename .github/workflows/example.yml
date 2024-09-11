@@ -41,5 +41,5 @@ jobs:
     steps:
       - name: print env variable
         run: |
-          echo "workflow_desc  ${env.workflow_desc}"
-          echo "GIT_DEMO_ACCESS  ${env.GIT_DEMO_ACCESS}"
+          echo "workflow_desc  ${workflow_desc}"
+          echo "GIT_DEMO_ACCESS  ${GIT_DEMO_ACCESS}"
