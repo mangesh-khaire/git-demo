@@ -15,8 +15,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
  
+      # Step 2: Print the library path for debugging
       - name: Print library path
-        run: echo "EXTERNAL_LIB_PATH=$EXTERNAL_LIB_PATH"
+        run: echo "EXTERNAL_LIB_PATH=${{ env.EXTERNAL_LIB_PATH }}"  # Use ${{ env.VAR_NAME }} syntax to access env variables
+        
         
       # Step 2: Set up JDK (if required, specify the Java version needed for your Gradle project)
       - name: Set up JDK 17
